@@ -1,10 +1,26 @@
-# # Claude Sonnet 4 — Full Master README (LDB.AI)
+# Liga de Boxeo 2025 Final (LDB.AI)
+
+## Current Status
+
+**⚠️ Project Planning Phase**
+
+This repository is currently in the planning and documentation phase. The README below outlines the intended architecture and deployment strategy for the Liga de Boxeo (LDB.AI) website.
+
+**What exists now:**
+- Project documentation and technical specifications
+- Planned architecture and build process
+
+**What's coming:**
+- Next.js 14 application implementation
+- Component development
+- CI/CD pipeline setup
+- Vercel deployment configuration
+
+---
 
 ## Overview
 
-This README explains the **complete system build and deployment process** for the **Liga de Boxeo (LDB.AI)** website powered by **Claude Sonnet 4**. It ensures consistency across design, development, health verification, continuous integration (CI), preview, and production promotion.
-
-The purpose is to enable Claude Sonnet 4 (via VS Code + GitHub integration) to fully execute the build — from generating production-grade code to verifying the deployment health and promoting the final output to production.
+This document outlines the **complete system build and deployment process** for the **Liga de Boxeo (LDB.AI)** website. It ensures consistency across design, development, health verification, continuous integration (CI), preview, and production promotion.
 
 ---
 
@@ -21,7 +37,9 @@ The purpose is to enable Claude Sonnet 4 (via VS Code + GitHub integration) to f
 
 ---
 
-## 🧱 Folder Structure
+## 🧱 Planned Folder Structure
+
+The following structure will be implemented once development begins:
 
 ```
 root/
@@ -45,15 +63,17 @@ root/
 
 ---
 
-## ⚙️ Build Workflow
+## ⚙️ Planned Build Workflow
 
-### 1. **Initial Project Setup**
+### 1. **Initial Project Setup** (To Be Implemented)
+
+Once the project is initialized, the following steps will be used:
 
 * Clone repository and install dependencies:
 
   ```bash
-  git clone <repo-url>
-  cd ldb-ai
+  git clone https://github.com/ebjai/ligabox2025final
+  cd ligabox2025final
   npm install
   ```
 * Run local development server:
@@ -64,49 +84,48 @@ root/
 
   The app will be available at **[http://localhost:3000](http://localhost:3000)**
 
-### 2. **Claude Sonnet 4 Build Execution**
+### 2. **Development Approach**
 
-Claude Sonnet 4 executes full build instructions directly from the `MASTER_PROMPT_CLAUDE_SONNET_4.txt` file.
-It handles:
+The project will be built using modern best practices:
 
 * Full Next.js + Tailwind configuration
-* Component rendering (Hero, AI widgets, Brand, etc.)
+* Component-based architecture (Hero, AI widgets, Brand, etc.)
 * Style composition (dark gradient backgrounds, typography, responsiveness)
 * CI/CD and health test scaffolding
 
-> Claude Sonnet 4 should never use placeholders — all content must be real, final assets.
+> All implementations will use production-ready code with no placeholders.
 
 ---
 
-## 🧠 Hero Section Structure
+## 🧠 Planned Hero Section Structure
 
-The hero layout represents the front-facing entry of the LDB.AI site.
+The hero layout will represent the front-facing entry of the LDB.AI site:
 
 * **Top Section:** Logo + slogan + CTA buttons
 * **AI Widget Bar:** AI-driven search and data interface
 * **Visual:** Wallpaper background (dark gold hue aligned with LDB brand)
 
-Ensure:
+Design Requirements:
 
-* No blocking ropes or unnecessary foregrounds.
-* Dark tones match logo gold (#DAA520) and background blacks (#000, #0A0A0A).
-* Fully responsive (desktop, tablet, mobile).
+* No blocking ropes or unnecessary foregrounds
+* Dark tones matching logo gold (#DAA520) and background blacks (#000, #0A0A0A)
+* Fully responsive (desktop, tablet, mobile)
 
 ---
 
-## 🩺 Health Verification
+## 🩺 Planned Health Verification
 
-Health endpoints ensure deployment integrity.
+Health endpoints will ensure deployment integrity once implemented:
 
-### `/api/health`
+### `/api/health` (To Be Implemented)
 
-Returns JSON response verifying uptime, response time, and status code.
+Will return JSON response verifying uptime, response time, and status code.
 
-### `/api/health/badge`
+### `/api/health/badge` (To Be Implemented)
 
-Generates dynamic badge for CI workflow.
+Will generate dynamic badge for CI workflow.
 
-Example response:
+Example planned response:
 
 ```json
 {
@@ -118,60 +137,68 @@ Example response:
 
 ---
 
-## 🔄 Continuous Integration (CI)
+## 🔄 Planned Continuous Integration (CI)
 
-GitHub Actions automate verification and deployment.
+GitHub Actions will automate verification and deployment once configured:
 
-### `health-check.yml`
+### `health-check.yml` (To Be Implemented)
 
-* Runs on pull requests and commits to `main` or `dev`
-* Checks build + lint + unit tests
-* Pings `/api/health` to verify service health
-* Blocks promotion if any check fails
+* Will run on pull requests and commits to `main` or `dev`
+* Check build + lint + unit tests
+* Ping `/api/health` to verify service health
+* Block promotion if any check fails
 
-### `preview.yml`
+### `preview.yml` (To Be Implemented)
 
-* Builds and deploys to Vercel preview environment
-* Adds environment badge and commit reference
+* Build and deploy to Vercel preview environment
+* Add environment badge and commit reference
 
-### `production.yml`
+### `production.yml` (To Be Implemented)
 
-* Promotes verified build from preview → production after passing all checks
-* Tags release with build ID and timestamp
-
----
-
-## 🚀 Deployment Process
-
-1. Commit changes to `dev` branch.
-2. CI runs `health-check.yml`.
-3. On success, `preview.yml` triggers a Vercel preview deployment.
-4. Once verified, merge into `main`.
-5. `production.yml` promotes deployment to live domain.
+* Promote verified build from preview → production after passing all checks
+* Tag release with build ID and timestamp
 
 ---
 
-## 🧩 Asset Management
+## 🚀 Planned Deployment Process
+
+Once the application is built, the deployment process will be:
+
+1. Commit changes to `dev` branch
+2. CI runs `health-check.yml`
+3. On success, `preview.yml` triggers a Vercel preview deployment
+4. Once verified, merge into `main`
+5. `production.yml` promotes deployment to live domain
+
+---
+
+## 🧩 Planned Asset Management
+
+Once implemented, assets will be organized as:
 
 * **Logos:** `/public/brand/logo.png` (transparent background preferred)
 * **Wallpaper:** `/public/wallpaper.jpg` (dark gradient, boxing ring perspective)
 * **Favicon:** Auto-generated by Vercel from logo.png
 
-Ensure file naming and format consistency before running Claude builds.
+File naming and format consistency will be maintained throughout development.
 
 ---
 
-## 🧠 Developer Notes
+## 🧠 Development Guidelines
 
-* Do **not** use placeholders for assets or text.
-* All hero components must use actual brand data.
-* Maintain responsive layout using Tailwind’s grid/flex utilities.
-* Keep background effects subtle and brand-aligned.
-* All AI widgets are to be real and functional (no mockups).
+When development begins:
+
+* Do **not** use placeholders for assets or text
+* All hero components must use actual brand data
+* Maintain responsive layout using Tailwind's grid/flex utilities
+* Keep background effects subtle and brand-aligned
+* All AI widgets should be real and functional (no mockups)
 
 ---
 
-## 🔍 Verification Checklist
+## 🔍 Implementation Checklist
+
+Once development is complete, verify:
 
 ✅ Code builds without error on `npm run build`
 ✅ Health endpoint returns 200 and `status: healthy`
@@ -201,10 +228,18 @@ Ensure file naming and format consistency before running Claude builds.
 
 ---
 
-## 🧭 Final Notes
+## 🧭 Getting Started
 
-This README, alongside the **MASTER PROMPT**, serves as the canonical guide for rebuilding and deploying the full LDB.AI site via Claude Sonnet 4.
+This README serves as the planning and specification document for the Liga de Boxeo (LDB.AI) website project.
 
-Claude must follow each instruction **sequentially**, without summarization, without question, and without placeholder substitution.
+**Next Steps:**
 
-> **Command:** Execute full build → verify health → run CI → preview deploy → promote to production.
+1. Initialize Next.js 14 project with TypeScript
+2. Set up Tailwind CSS and component libraries
+3. Implement core components (Hero, Brand, AI widgets)
+4. Configure CI/CD pipelines
+5. Deploy to Vercel
+
+**Project Status:** Documentation and Planning Phase
+
+For questions or contributions, please refer to the repository issues and discussions.
